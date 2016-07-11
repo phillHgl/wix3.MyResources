@@ -14,7 +14,7 @@ if not exist "%_msbuild%" (
 )
 
 :: added /p:PlatformToolset=v120_xp while trying to build wix39
-call "%_msbuild%" ..\..\wix3\src\ext\ext.proj /p:PlatformToolset=v120_xp /p:DebugSymbols=true /p:DebugType=full /p:Optimize=false /v:diag /l:FileLogger,Microsoft.Build.Engine;logfile="%~dp0\ext.log"
+call "%_msbuild%" ..\..\wix3\src\ext\ext.proj /p:DebugSymbols=true /p:DebugType=full /p:Optimize=false /v:diag /l:FileLogger,Microsoft.Build.Engine;logfile="%~dp0\ext.log"
 if errorlevel 1 goto :errBuild
 @echo 
 

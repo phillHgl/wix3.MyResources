@@ -12,10 +12,10 @@ if not exist "%_msbuild%" (
   goto :errMBS
 )
 
-call "%_msbuild%" ..\..\wix3\src\ext\ca\ca.proj /m:1 /p:PlatformToolset=v120_xp /p:DebugSymbols=true /p:DebugType=full /p:Optimize=false /v:diag /l:FileLogger,Microsoft.Build.Engine;logfile="%~dp0\ext.log"
+call "%_msbuild%" ..\..\wix3\src\ext\ca\ca.proj /m:1 /p:DebugSymbols=true /p:DebugType=full /p:Optimize=false /v:diag /l:FileLogger,Microsoft.Build.Engine;logfile="%~dp0\ext.log"
 if errorlevel 1 goto :errBuild
 
-call "%_msbuild%" ..\..\wix3\src\ext\UtilExtension\util.proj /m:1 /p:PlatformToolset=v120_xp /p:DebugSymbols=true /p:DebugType=full /p:Optimize=false /v:diag /l:FileLogger,Microsoft.Build.Engine;append;logfile="%~dp0\ext.log"
+call "%_msbuild%" ..\..\wix3\src\ext\UtilExtension\util.proj /m:1 /p:DebugSymbols=true /p:DebugType=full /p:Optimize=false /v:diag /l:FileLogger,Microsoft.Build.Engine;append;logfile="%~dp0\ext.log"
 if errorlevel 1 goto :errBuild
 
 ::success
